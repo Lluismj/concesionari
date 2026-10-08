@@ -1,0 +1,174 @@
+{
+  "vehiculos": [
+    {
+      "id": "1",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "unidades": 4,
+      "precio": 23500,
+      "tipo": "normal"
+    },
+    {
+      "id": "2",
+      "marca": "Ford",
+      "modelo": "Focus",
+      "unidades": 2,
+      "precio": 27000,
+      "tipo": "normal"
+    },
+    {
+      "id": "3",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "unidades": 5,
+      "precio": 19000,
+      "tipo": "normal"
+    },
+    {
+      "id": "4",
+      "marca": "Tesla",
+      "modelo": "Model 3",
+      "unidades": 3,
+      "precio": 39990,
+      "tipo": "electrico",
+      "autonomia": 513
+    },
+    {
+      "id": "5",
+      "marca": "Renault",
+      "modelo": "Megane E-Tech",
+      "unidades": 2,
+      "precio": 36000,
+      "tipo": "electrico",
+      "autonomia": 450
+    },
+    {
+      "id": "6",
+      "marca": "Toyota",
+      "modelo": "Yaris",
+      "unidades": 6,
+      "precio": 22000,
+      "tipo": "normal"
+    },
+    {
+      "id": "7",
+      "marca": "Ford",
+      "modelo": "Puma",
+      "unidades": 3,
+      "precio": 28500,
+      "tipo": "normal"
+    },
+    {
+      "id": "8",
+      "marca": "Seat",
+      "modelo": "Leon",
+      "unidades": 1,
+      "precio": 26500,
+      "tipo": "normal"
+    },
+    {
+      "id": "9",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "unidades": 7,
+      "precio": 18500,
+      "tipo": "normal"
+    },
+    {
+      "id": "10",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "unidades": 2,
+      "precio": 31000,
+      "tipo": "normal"
+    },
+    {
+      "id": "11",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "unidades": 4,
+      "precio": 21000,
+      "tipo": "normal"
+    },
+    {
+      "id": "12",
+      "marca": "Hyundai",
+      "modelo": "Tucson",
+      "unidades": 0,
+      "precio": 32500,
+      "tipo": "normal"
+    },
+    {
+      "id": "13",
+      "marca": "Kia",
+      "modelo": "Sportage",
+      "unidades": 3,
+      "precio": 33500,
+      "tipo": "normal"
+    },
+    {
+      "id": "14",
+      "marca": "Tesla",
+      "modelo": "Model Y",
+      "unidades": 2,
+      "precio": 44990,
+      "tipo": "electrico",
+      "autonomia": 533
+    },
+    {
+      "id": "15",
+      "marca": "Volkswagen",
+      "modelo": "ID.3",
+      "unidades": 1,
+      "precio": 35500,
+      "tipo": "electrico",
+      "autonomia": 435
+    },
+    {
+      "id": "16",
+      "marca": "Peugeot",
+      "modelo": "e-208",
+      "unidades": 0,
+      "precio": 31500,
+      "tipo": "electrico",
+      "autonomia": 410
+    },
+    {
+      "id": "17",
+      "marca": "Hyundai",
+      "modelo": "IONIQ 5",
+      "unidades": 2,
+      "precio": 45900,
+      "tipo": "electrico",
+      "autonomia": 507
+    },
+    {
+      "id": "18",
+      "marca": "Kia",
+      "modelo": "EV6",
+      "unidades": 3,
+      "precio": 47900,
+      "tipo": "electrico",
+      "autonomia": 528
+    },
+    {
+      "id": "19",
+      "marca": "BMW",
+      "modelo": "i4",
+      "unidades": 1,
+      "precio": 58900,
+      "tipo": "electrico",
+      "autonomia": 590
+    },
+    {
+      "id": "20",
+      "marca": "Nissan",
+      "modelo": "Leaf",
+      "unidades": 4,
+      "precio": 29900,
+      "tipo": "electrico",
+      "autonomia": 270
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
