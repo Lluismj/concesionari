@@ -1,0 +1,2 @@
+# concesionari
+Exercici simple DWEC 
