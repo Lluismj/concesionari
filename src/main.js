@@ -109,7 +109,7 @@ async function probarPUT() {
   }
 }
 
-// Funció definida per probar metode DELETE
+// Funció definida per probar metode POST
 async function probarDELETE() {
   try {
     const datos = await getDBVehiculos();

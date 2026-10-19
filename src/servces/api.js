@@ -1,4 +1,4 @@
-const SERVER = import.meta.env.VITE_URL_API;
+const SERVER = import.meta.env.VITE_SERVIDOR;
 
 export async function getDBVehiculos() {
     const response = await fetch(`${SERVER}/vehiculos`);
