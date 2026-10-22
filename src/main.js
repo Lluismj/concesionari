@@ -290,7 +290,7 @@ function obtenerDatosFormulario(){
 }
 
 function obtenerIdEliminar() {
-  Retorna l’identificador com a text, sense espais als extrems
+  //Retorna l’identificador com a text, sense espais als extrems
   const id = document.getElementById('id-eliminar').value.trim()
 
   if (id === '') {
