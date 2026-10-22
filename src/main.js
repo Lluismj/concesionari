@@ -105,7 +105,7 @@ let vehiculos = []
 
 
 
-
+//converteix un objecte de dades del servidor en una instancia de la classe corresponent
 function crearVehiculo(datos){
   let vehiculo;
 
@@ -125,17 +125,22 @@ function crearVehiculo(datos){
       datos.precio
     );
   }
+
+  //Es conservaa id per identificar i eliminar el vehicle
   vehiculo.id = datos.id
   
   return vehiculo;
 }
 
+//Consulta l'api i reemplaça el array
 async function cargarVehiculos(){
   const datos = await getDBVehiculos();
 
+  //transforma cada objecte en una instancia.
   vehiculos = datos.map(dato => crearVehiculo(dato));
 }
 
+//carrega i mostra cataleg inicial
 async function iniciar() {
   try {
     mostrarMensaje('Carregant vehicles...', 'info')
@@ -149,6 +154,7 @@ async function iniciar() {
   }
 }
 
+//Construeix la targeta del vehicle i la retorna. encara no esta inserida en la pagina.
 function crearTargetaVehiculo(vehiculo){
   const targeta = document.createElement('article');
 
@@ -173,6 +179,7 @@ function crearTargetaVehiculo(vehiculo){
 
   targeta.append(titulo,identificador,unidades,precio,stock);
 
+  //Comprona si l'objecte és una instància de cotxe elèctric.
   if(vehiculo instanceof CocheElectrico){
     targeta.classList.add('electrico');
     
@@ -183,6 +190,7 @@ function crearTargetaVehiculo(vehiculo){
 
   }
 
+  //Se li posa classe CSS per visualització.
   if(vehiculo.unidades < 3){
     targeta.classList.add('pocas-unidades')
   }
@@ -191,31 +199,38 @@ function crearTargetaVehiculo(vehiculo){
 
 }
 
+
+//rep un array i dibuixa les targetes en #lista-vehiculos
 function mostrarVehiculos(vehiculos){
   const lista = document.getElementById('lista-vehiculos');
 
+  //Primer buidem el contenidor.
   lista.innerHTML = '';
 
   if(vehiculos.length === 0){
     const mensaje = document.createElement('p');
     mensaje.textContent = 'No hi ha vehicles disponibles';
     lista.append(mensaje)
+
+    //sortim per que no hi ha cap targeta per pintar.
     return;
   }
-
+  // forEach recorre l’array i inserix una targeta per cada vehicle.
   vehiculos.forEach(vehiculo => {
     const targeta = crearTargetaVehiculo(vehiculo);
     lista.append(targeta);
   });
 }
-
+//Suma valor de l'stoc
 function valorTotalConcesionario(vehiculos){
+  //reduce acumula la suma en total;
   return vehiculos.reduce(
     (total,vehiculo) => total + vehiculo.valorStock(),
     0
   )
 }
 
+//Mostra la quantitat de models i valor de stock
 function actualizarResumen(vehiculos){
   const total = document.getElementById('total-vehiculos');
   const valor = document.getElementById('valor-stock');
@@ -224,6 +239,7 @@ function actualizarResumen(vehiculos){
   valor.textContent = valorTotalConcesionario(vehiculos);
 }
 
+//Mostra un únic missatge amb la classe CSS info o error.
 function mostrarMensaje(texto,tipo){
   const contenidor = document.getElementById('mensajes');
 
@@ -236,6 +252,7 @@ function mostrarMensaje(texto,tipo){
   contenidor.append(mensaje);
 }
 
+//lig els camps i torna un objecte de dades preparat per enviar-lo a la api.
 function obtenerDatosFormulario(){
   const marca = document.getElementById('marca').value.trim();
   const modelo = document.getElementById('modelo').value.trim();
@@ -273,6 +290,7 @@ function obtenerDatosFormulario(){
 }
 
 function obtenerIdEliminar() {
+  Retorna l’identificador com a text, sense espais als extrems
   const id = document.getElementById('id-eliminar').value.trim()
 
   if (id === '') {
@@ -282,6 +300,7 @@ function obtenerIdEliminar() {
   return id
 }
 
+//Recarreta de dades. primer espera les dades i després actualitza el DOM.
 async function actualizarCatalogo(){
     await cargarVehiculos();
 
@@ -289,6 +308,7 @@ async function actualizarCatalogo(){
     actualizarResumen(vehiculos);
 }
 
+//guarda vehicle en el servidor i actualitza pagina.
 async function agregarVehiculoDesdeFormulario(){
   let guardado = false;
 
@@ -314,7 +334,8 @@ async function agregarVehiculoDesdeFormulario(){
   }
 }
 
-
+//llig l'id i elimina el vehicle del servidor
+//després actualitza el catàleg.
 async function eliminarVehiculoDesdeCampo() {
   let eliminado = false
 
@@ -322,6 +343,7 @@ async function eliminarVehiculoDesdeCampo() {
     const id = obtenerIdEliminar()
 
     await removeDBVehiculo(id)
+    // El servei de baixa ha acabat sense llançar cap error.
     eliminado = true
 
     await actualizarCatalogo()
@@ -343,6 +365,7 @@ async function eliminarVehiculoDesdeCampo() {
   }
 }
 
+//Crida a la funció iniciar
 await iniciar()
 
 const botonGuardar = document.getElementById('btn-guardar');
