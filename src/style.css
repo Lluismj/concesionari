@@ -294,3 +294,60 @@ code {
     border-right-color: var(--border);
   }
 }
+
+/* Missatges informatius i d’error */
+
+.info {
+  padding: 12px;
+  background-color: #e6f2ff;
+  color: #174b7a;
+}
+
+.error {
+  padding: 12px;
+  background-color: #ffe5e5;
+  color: #9b0000;
+}
+
+/* Contenidor de les targetes */
+#lista-vehiculos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Estil de tots els vehicles */
+.vehiculo {
+  box-sizing: border-box;
+  width: 260px;
+  max-width: 100%;
+  padding: 16px;
+  border: 2px solid #999;
+  border-radius: 8px;
+}
+
+.vehiculo h3 {
+  margin-top: 0;
+}
+
+/* Vehicles elèctrics */
+.vehiculo.electrico {
+  background-color: #eaf6ec;
+  color: #173d20;
+  border-color: #287a3e;
+}
+
+/* Vehicles amb menys de 3 unitats */
+.vehiculo.pocas-unidades {
+  border: 3px solid #c77700;
+}
+
+/* Camps del formulari */
+#form-vehiculo > div {
+  margin-bottom: 12px;
+}
+
+#form-vehiculo label {
+  display: block;
+  margin-bottom: 4px;
+}
