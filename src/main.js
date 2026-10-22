@@ -168,7 +168,7 @@ function crearTargetaVehiculo(vehiculo){
   identificador.textContent = `Identificador: ${vehiculo.id}`
 
   const unidades = document.createElement('p');
-  unidades.textContent= `Unitats disponibles: ${vehiculo.unidades}`
+  unidades.textContent = `Unitats disponibles: ${vehiculo.unitats}`
 
   const precio = document.createElement('p');
   precio.textContent = `Preu: ${vehiculo.getPrecio()} €`
@@ -191,7 +191,7 @@ function crearTargetaVehiculo(vehiculo){
   }
 
   //Se li posa classe CSS per visualització.
-  if(vehiculo.unidades < 3){
+  if(vehiculo.unitats < 3){
     targeta.classList.add('pocas-unidades')
   }
 
