@@ -20,7 +20,7 @@ export async function addDBVehiculo(datos) {
     });
 
     if (!response.ok) {
-        throw new error ('Error en afegir vehicle: ${response.status');
+        throw new Error ('Error en afegir vehicle: ${response.status');
     }
 
     return response.json();
@@ -37,7 +37,7 @@ export async function changeDBVehiculo(datos) {
     });
 
     if (!response.ok) {
-        throw new error ('Error en afegir vehicle: ${response.status');
+        throw new Error ('Error en afegir vehicle: ${response.status');
     }
 
     return response.json();
@@ -49,6 +49,6 @@ export async function removeDBVehiculo(id){
     });
 
     if (!response.ok) {
-        throw new error ('Error en afegir vehicle: ${response.status');
+        throw new Error ('Error en afegir vehicle: ${response.status');
     }
 }
