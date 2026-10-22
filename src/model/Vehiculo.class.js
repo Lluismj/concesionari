@@ -40,7 +40,7 @@ class Vehiculo {
 
   // Calcula l'IVA d'un preu
   static calcularIVA(preu) {
-    return preu * Vehicle.IVA
+    return preu * Vehiculo.IVA
   }
 
 
